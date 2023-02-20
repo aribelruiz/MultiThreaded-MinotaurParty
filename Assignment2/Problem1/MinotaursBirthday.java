@@ -40,7 +40,6 @@ public class MinotaursBirthday {
 
         // Sets firstGuest in maze
         firstGuest = guestInMaze;
-        System.out.println("First guest is: " + firstGuest);
 
         // Creating a new thread for each guest at the Minotaur's Party
         while (firstGuestCakeReset != numOfGuests)
@@ -67,7 +66,7 @@ public class MinotaursBirthday {
         NumberFormat formatter = new DecimalFormat("#0.00000");
         System.out.println("Execution time: " + formatter.format((end - start) / 1000000000d) + "s");
 
-        // Prints guestsAteCake to assure all guests ate
+        // Prints guestsAteCake[] to assure all guests ate cake (all values are true)
         System.out.println("\nguestsAteCake[" + numOfGuests + "]: ");
         System.out.println(Arrays.toString(guestAteCake) + "\n");
 
