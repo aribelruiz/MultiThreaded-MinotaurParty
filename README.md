@@ -26,11 +26,11 @@ My approach to problem 1 is conceptually similar to the solution of the Prisoner
 
 ### Conceptual Approach 
 The winning strategy that I simulated in my solution involves the following: 
-    - The first guest to enter the labyrinth is in charge of replacing the cupcake everytime they enter the maze and there is no cupcake on the table. 
+- The first guest to enter the labyrinth is in charge of replacing the cupcake everytime they enter the maze and there is no cupcake on the table. 
 
-    - Each other guest to enter the labyrinth is to eat the cupcake the first time they see it on the table. Otherwise, they leave the cupcake and table alone.
+- Each other guest to enter the labyrinth is to eat the cupcake the first time they see it on the table. Otherwise, they leave the cupcake and table alone.
 
-    - The first guest then counts how many times they have to replace the cupcake. Once the guest counts (N-1) times, every other guest (excluding themself) has entered the maze.
+- The first guest then counts how many times they have to replace the cupcake. Once the guest counts (N-1) times, every other guest (excluding themself) has entered the maze.
 
 ### Coding Approach
 My coding approach to this problem involved the use of threads and the join() method.
