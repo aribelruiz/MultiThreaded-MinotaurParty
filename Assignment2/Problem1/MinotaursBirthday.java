@@ -45,7 +45,7 @@ public class MinotaursBirthday {
         while (firstGuestCakeReset != numOfGuests)
         {
             // Creates and joins new guest thread
-            GuestThread guestThread = new GuestThread(guestInMaze, guestAteCake[guestInMaze]);
+            GuestThreadBirthday guestThread = new GuestThreadBirthday(guestInMaze, guestAteCake[guestInMaze]);
             Thread newThread = new Thread(guestThread);
             newThread.start();
 
@@ -67,8 +67,25 @@ public class MinotaursBirthday {
         System.out.println("Execution time: " + formatter.format((end - start) / 1000000000d) + "s");
 
         // Prints guestsAteCake[] to assure all guests ate cake (all values are true)
+        System.out.println("\nfirtGuestCakeReset: " + firstGuestCakeReset);
+
         System.out.println("\nguestsAteCake[" + numOfGuests + "]: ");
         System.out.println(Arrays.toString(guestAteCake) + "\n");
+
+        // Checks if any guests did not eat cake
+        boolean allGuestsAte = true;
+        for (int i = 0; i < numOfGuests; i++) {
+            if (guestAteCake[i] == false) {
+                allGuestsAte = false;
+            }
+        }
+
+        if (allGuestsAte) {
+            System.out.println("All guests have entered the maze and eaten cake.");
+        }
+        else {
+            System.out.println("Some guests did NOT enter the maze and eat cake.");
+        }
 
     }
 }

@@ -6,8 +6,6 @@
 // ======================================================================
 //      This program represents each guest checking the showroom to see a crystal vase.
 
-import java.util.*;
-import java.util.concurrent.locks.Lock;
 import java.util.concurrent.TimeUnit;
 
 public class GuestThread implements Runnable {

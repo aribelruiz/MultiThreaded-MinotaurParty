@@ -8,9 +8,6 @@
 //      This program simulates strategy 2 for Problem 2 of Assignment 2, Minotaur's Crystal Vase.
 
 import java.util.*;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.text.NumberFormat;
 import java.text.DecimalFormat;
 import java.util.concurrent.locks.Lock;
@@ -75,6 +72,21 @@ public class MinotaursVase {
         // Prints guestsSeenVase[] to assure all guests have seen vase
         System.out.println("\nguestsSeenVase[" + numOfGuests + "]: ");
         System.out.println(Arrays.toString(guestsSeenVaseArr) + "\n");
+
+          // Checks if any guests did not eat cake
+          boolean allGuestsSaw = true;
+          for (int i = 0; i < numOfGuests; i++) {
+              if (guestsSeenVaseArr[i] == false) {
+                  allGuestsSaw = false;
+              }
+          }
+  
+          if (allGuestsSaw) {
+              System.out.println("All guests saw the vase.");
+          }
+          else {
+              System.out.println("Some guests did NOT see the vase.");
+          }
         
     }
 }

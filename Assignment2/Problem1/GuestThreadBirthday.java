@@ -2,13 +2,11 @@
 // 02/18/2023
 
 // ======================================================================
-// COP4520 : Guest Thread for Minoraurs Birthday party (GuestThread.java)
+// COP4520 : Guest Thread for Minoraurs Birthday party (GuestThreadBirthday.java)
 // ======================================================================
 //      This program represents each guest going through the maze as a thread.
 
-import java.util.*;
-
-public class GuestThread implements Runnable {
+public class GuestThreadBirthday implements Runnable {
 
     // ====================================== Class Variables ======================================
     private int threadNumber;
@@ -18,7 +16,7 @@ public class GuestThread implements Runnable {
 
     // ========================================= Functions =========================================
 
-    public GuestThread(int threadNumber, boolean ateCake) {
+    public GuestThreadBirthday(int threadNumber, boolean ateCake) {
         this.threadNumber = threadNumber;
         this.ateCake = ateCake;
     }
