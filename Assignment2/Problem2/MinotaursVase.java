@@ -21,7 +21,7 @@ public class MinotaursVase {
     // ====================================== Class Variables ======================================
 
     private static int nextGuestInRoom = 0;
-    private static int numOfGuests = 10;
+    private static int numOfGuests = 100;
 
     public static int guestViewingVase;
     public static int guestsSeenVase = 0;
@@ -67,40 +67,14 @@ public class MinotaursVase {
         // Ends timer
         long end = System.nanoTime();
 
+        
         // Prints execution time
         NumberFormat formatter = new DecimalFormat("#0.00000");
         System.out.println("Execution time: " + formatter.format((end - start) / 1000000000d) + "s");
 
-        // Creates MinotaursVase.txt file to print output
-        try {
-            File outputFile = new File("MinotaursVase.txt");
-    
-            if (outputFile.createNewFile()) {
-                System.out.println("\nFile created: " + outputFile.getName()); 
-        }
-        else {
-            System.out.println("\nFile '" + outputFile.getName() + "' already exists.");
-        }
-
-        } catch (IOException e) {
-            System.out.println("\nAn error occured.");
-            e.printStackTrace();
-        }
-
-        // Writes output to MinotaursVase.txt file
-        try {
-            FileWriter myWriter = new FileWriter("MinotaursVase.txt");
-            
-            myWriter.write("\nguestsSeenVase[" + numOfGuests + "]: ");
-            myWriter.write(Arrays.toString(guestsSeenVaseArr) + "\n");
-           
-            // Closing file writer
-            myWriter.close();
-            System.out.println("Successfully wrote output to 'MinotaursVase.txt'.\n");
-                
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
+        // Prints guestsSeenVase[] to assure all guests have seen vase
+        System.out.println("\nguestsSeenVase[" + numOfGuests + "]: ");
+        System.out.println(Arrays.toString(guestsSeenVaseArr) + "\n");
+        
     }
 }
