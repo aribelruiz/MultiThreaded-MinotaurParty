@@ -15,11 +15,11 @@ The program for problem 1 simulates a winning strategy for the 'Minotaur's Birth
 The output on the command line is the execution time of the program and an array of booleans where guestsAteCake[k] = true when guest ***k*** has entered a labyrinth and eaten a cupcake at the minotaur's birthday party.
 
 ### Minotaur's Birthday Party Problem
-    In the 'Minotaur's Birthday Party' problem, a minotaur invites N guests to a party and starts a game where the minotaur picks guests randomly to enter his labyrinth one at a time. A cupcake is initially placed at the end of the labyrinth. When a guest reaches the cupcake at the end of the labyrinth, they can decide to eat it or leave it alone. If the cupcake was eaten by the previous guest in the labyrinth, the current guest can request another cupcake and then decide whether they want to eat it or leave it alone. Guests can be called multiple times to enter the labyrinth.
+In the 'Minotaur's Birthday Party' problem, a minotaur invites N guests to a party and starts a game where the minotaur picks guests randomly to enter his labyrinth one at a time. A cupcake is initially placed at the end of the labyrinth. When a guest reaches the cupcake at the end of the labyrinth, they can decide to eat it or leave it alone. If the cupcake was eaten by the previous guest in the labyrinth, the current guest can request another cupcake and then decide whether they want to eat it or leave it alone. Guests can be called multiple times to enter the labyrinth.
 
-    The guests must successfully announce when everyone has entered the labyrinth to win the game, but the guests are not allowed to communicate with each other about their visit to the labyrinth at any point in time.
+The guests must successfully announce when everyone has entered the labyrinth to win the game, but the guests are not allowed to communicate with each other about their visit to the labyrinth at any point in time.
 
-    The Minotaur allows the guests to come up with a strategy before the start of the game. Therefore, the guests must come up with a winning strategy that will allow them to successfully decide when every guest has entered the maze without communicating with each other once the game starts.
+The Minotaur allows the guests to come up with a strategy before the start of the game. Therefore, the guests must come up with a winning strategy that will allow them to successfully decide when every guest has entered the maze without communicating with each other once the game starts.
 
 ## Summary of Approach (Problem 1)
 My approach to problem 1 is conceptually similar to the solution of the Prisoner Switch problem we saw in class.
