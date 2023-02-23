@@ -2,23 +2,13 @@
 Concepts of Parallel and Distributed Processing - Assignment 2. 
 This assignment solves 2 different riddles using threads.
 
-## How to Run Programs
-
-### To Run Problem1
+# Problem 1: Minotaur's Birthday Party
+## How to Run Program 1 (Problem 1)
 This program was written using java. To run problem 1, cd into the Assignment2/Problem1 directory and enter the following into the command line:
 
     javac MinotaursBirthday.java
     java MinotaursBirthday.java
 
-### To Run **Problem1**
-This program was written using java. To run problem 2, cd into the Assignment2/Problem2 directory and enter the following into the command line:
-
-    javac MinotaursVase.java
-    java MinotaursVase.java
-
-The output on the command line is the execution time of the program and an array of booleans where guestSeenVase[i] = true when guest 'i' has seen the vase at the party.
-
-# Problem 1: Minotaur's Birthday Party
 ## Program Description (Problem 1)
 The program for problem 1 simulates a winning strategy for the 'Minotaur's Birthday Party' problem. 
 
@@ -66,6 +56,13 @@ Each guest must wait for the previous guests to exit the maze before entering, a
 I used the join() method to assure that every thread created waited for the previous thread to finish before running. Due to this approach, the execution time varies depending on how many guests, N, were invited to the party and a game of chance due to the random number generator possibly generating guests who have already entered the maze a significant amount of times to enter the maze. As there is no way to solve the problem concurrently, my approach is most efficient.
 
 I also assured to use a boolean array for guestsAteCake[] to decrease the amount of memory used using another data type.
+
+# Problem 2: Minotaur's Crystal Vase
+## How To Run Program 2 (Problem 2)
+This program was written using java. To run problem 2, cd into the Assignment2/Problem2 directory and enter the following into the command line:
+
+    javac MinotaursVase.java
+    java MinotaursVase.java
 
 
     
