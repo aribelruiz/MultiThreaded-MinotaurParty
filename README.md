@@ -1,4 +1,4 @@
-# COP4520_Assignment2
+# COP4520 Assignment2
 Concepts of Parallel and Distributed Processing - Assignment 2. 
 This assignment solves 2 different riddles using threads.
 
@@ -35,15 +35,15 @@ The winning strategy that I simulated in my solution involves the following:
 ### Coding Approach
 My coding approach to this problem involved the use of threads and the join() method.
 
-I represented each guest that enters the labyrinth(maze) at the minotaur's birthday party as a new thread. Each thread that is created is passed a thread number ***k*** and a boolean guestsAteCake[k], where guestsAteCake[k] = true if a guest ***k*** has entered the maze. Each thread (or guest) only has access to whether or not they have entered the maze; they are not given any information about whether or not other guests have entered the maze and eaten a cupcake.
+- I represented each guest that enters the labyrinth(maze) at the minotaur's birthday party as a new thread. Each thread that is created is passed a thread number ***k*** and a boolean guestsAteCake[k], where guestsAteCake[k] = true if a guest ***k*** has entered the maze. Each thread (or guest) only has access to whether or not they have entered the maze; they are not given any information about whether or not other guests have entered the maze and eaten a cupcake.
 
-Guests are randomly chosen (from 0 to N) to enter the maze through a random generator. The first guest (thread number) is randomly chosen (from 0 to N) and then stored in a public integer variable called firstGuest. This variable determines the action of the first guest when the thread is running.
+- Guests are randomly chosen (from 0 to N) to enter the maze through a random generator. The first guest (thread number) is randomly chosen (from 0 to N) and then stored in a public integer variable called firstGuest. This variable determines the action of the first guest when the thread is running.
 
-Once a guest enters a maze and a new thread is created, I use the join() method to assure that the new thread begins to run after the previous thread has finished running. This way, there is only one guest in the maze at a time.
+- Once a guest enters a maze and a new thread is created, I use the join() method to assure that the new thread begins to run after the previous thread has finished running. This way, there is only one guest in the maze at a time.
 
-If the thread number of the thread is equal to the public integer firstGuest, the guest checks if there is a cake on the table. If there is no cake on the table, the guest replaces the cake on the table by setting a public boolean cakeOnTable to true and increments a public firstGuestCakeReset counter. The guest then checks if the firstGuestCakeReset counter is equal to N-1. If the counter equals N-1, then every other guest has entered the maze and eaten cake. The first guest can then eat cake and end the party.
+- If the thread number of the thread is equal to the public integer firstGuest, the guest checks if there is a cake on the table. If there is no cake on the table, the guest replaces the cake on the table by setting a public boolean cakeOnTable to true and increments a public firstGuestCakeReset counter. The guest then checks if the firstGuestCakeReset counter is equal to N-1. If the counter equals N-1, then every other guest has entered the maze and eaten cake. The first guest can then eat cake and end the party.
 
-If the thread number is not the first guest, the guest ***k*** uses the boolean guestsAteCake[k] to check whether or not they themself have entered the maze. If there is cake on the table and they have never entered the maze, the cakeOnTable boolean is set to false and guestAteCake[k] is set to true.
+- If the thread number is not the first guest, the guest ***k*** uses the boolean guestsAteCake[k] to check whether or not they themself have entered the maze. If there is cake on the table and they have never entered the maze, the cakeOnTable boolean is set to false and guestAteCake[k] is set to true.
 
 ## Experimental Evaulation (Problem 1)
 I first tested my program with a small number, such as 10, to test that my algorithm was working correctly. To test that it was working correctly, I had print statements at every critical point including when the firstGuest was selected, when a thread was created, and what actions each thread took once the guest was in the maze. After assuring the logic was working correctly through print statements, I printed firstGuestCakeReset counter to assure that the first guest reset the cake N times (N-1 times for all other guests + 1 time for himself). I also printed the guestsAteCake[] to assure that every index of the array was true; proving that every guest had entered the maze because the index is only set to true when a guest enters the maze for the first time and eats cake.
