@@ -1,3 +1,5 @@
+# COP4520_Assignment2 (Two Parts)
+
 # Problem 1: Minotaur's Birthday Party
 ## How to Run Program 1 (Problem 1)
 This program was written using java. To run problem 1, cd into the Assignment2/Problem1 directory and enter the following into the command line:
@@ -71,7 +73,7 @@ To assure that the lock functioned correctly, I used print statements at any cri
 
 I first tested with small values of N, where N is the total number of guests. I first tested with a small value of 5 to check the print statements and assure the program was functioning correctly and giving me the proper output. When a guest entered the showroom, the guest switched the sign to "BUSY". Once I saw that no other guests attempted to enter the showroom until the current guest in the showroom switched the showroomSign back to "AVAILABLE", I knew the program was working as inteded. 
 
-## Reasoning for Efficiency (Problem 1)
+## Reasoning for Efficiency (Problem 2)
 I chose strategy 2 as the most efficient of all 3 strategies b making a pros and cons list for all 3 strategies listed in the assignment.
 
 Strategy 2 is the best strategy because it allows guests to enjoy the party and removes long lines or crowds from the door because the showroom sign would be visible to all guests wanting to see the vase. Guests would not attempt to enter the showroom is they saw the sign read "BUSY" and they would return to the party and try again at another time. Another pro is that this strategy allows guests to enjoy the party instead of waiting in long lines or large crowds.
