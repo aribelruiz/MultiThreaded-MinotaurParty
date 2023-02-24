@@ -1,4 +1,7 @@
 # COP4520_Assignment2 (Two Parts)
+Below you can find the ReadMe for Problem 1 and Problem 2 of Assignment 2 for Concepts of Parallel and Distributed Processing. 
+
+
 
 # Problem 1: Minotaur's Birthday Party
 ## How to Run Program 1 (Problem 1)
