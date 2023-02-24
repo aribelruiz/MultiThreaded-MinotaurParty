@@ -10,9 +10,7 @@ This program was written using java. To run problem 1, cd into the Assignment2/P
     java MinotaursBirthday.java
 
 ## Program Description (Problem 1)
-The program for problem 1 simulates a winning strategy for the 'Minotaur's Birthday Party' problem. 
-
-The output on the command line is the execution time of the program and an array of booleans where guestsAteCake[k] = true when guest ***k*** has entered a labyrinth and eaten a cupcake at the minotaur's birthday party.
+The program for problem 1 simulates a winning strategy for the 'Minotaur's Birthday Party' problem. The output on the command line is the execution time of the program and an array of booleans where guestsAteCake[k] = true when guest ***k*** has entered a labyrinth and eaten a cupcake at the minotaur's birthday party.
 
 ### Minotaur's Birthday Party Problem
 In the 'Minotaur's Birthday Party' problem, a minotaur invites N guests to a party and starts a game where the minotaur picks guests randomly to enter his labyrinth one at a time. A cupcake is initially placed at the end of the labyrinth. When a guest reaches the cupcake at the end of the labyrinth, they can decide to eat it or leave it alone. If the cupcake was eaten by the previous guest in the labyrinth, the current guest can request another cupcake and then decide whether they want to eat it or leave it alone. Guests can be called multiple times to enter the labyrinth.
@@ -60,20 +58,18 @@ This program was written using java. To run problem 2, cd into the Assignment2/P
     java MinotaursVase.java
 
 ## Program Description (Problem 2)
-The program for problem 2 simulates a strategy 2 for the 'Minotaur's Crystal vase' problem. 
-
-The output on the command line is the execution time of the program and an array of booleans where guestsSeenVaseArr[k] = true when guest ***k*** has entered the showroom and seen the vase at the minotaur's party.
+The program for problem 2 simulates a strategy 2 for the 'Minotaur's Crystal vase' problem. The output on the command line is the execution time of the program and an array of booleans where guestsSeenVaseArr[k] = true when guest ***k*** has entered the showroom and seen the vase at the minotaur's party.
     
 ### Minotaur's Crystal Vase Problem (Strategy 2)
 The Minotaur decides to show his guests a crystal vase in a dedicated showroom with a single door. Only one guest is allowed at a time. Strategy #2 allows guests to place a sign on the door indicating when the showroom is "AVAILABLE" or "BUSY". Every guest is responsible to set the sign to “BUSY” when entering the showroom and back to “AVAILABLE” when they exit. Therefore, guests will not try entering the room if the sign read "BUSY".
 
 ## Summary of Approach (Problem 2)
+### Coding Approach
 To simulate strategy 2 I used concurrent threads and a lock. I simulated this strategy until every guest at the party has entered the showroom and seen the vase. Each thread represents a guest who attempts to enter the showroom.
 
 To keep track of which guests have seen the vase, I created a boolean array called guestsSeenVaseArr[], where guestsSeenVaseArr[k] = true when guest ***k*** has entered the showroom and seen the vase. I then randomly generated a number ***nextGuestInRoom*** (0 to N-1) to represent a guest wanting to see the vase. If ***nextGuestInRoom*** does not equal the current guest viewing the vase and the showroom is available, I create a new thread where threadNumber equals ***nextGuestInRoom***. 
 
 When a thread begins to run, the thread tries to acquire the lock to ensure only one thread is accessing the showroom sign at a time. If the lock is acquired, the guest sets the showroom sign to "BUSY" and updates the guestsSeenVaseArr[k] to true so that guest who entered the showroom, guest ***k***, has seen the vase. Once the guest has seen the vase, they set the showroom sign to "AVAILABLE" and unlock the lock so other guests may enter the showroom and have access to changing the showroom sign. If the lock is not acquired, this means another guest gained access to the showroom and showroom sign, therefore the room is busy and the guest who failed to acquire the lock must try again at a later time in the party.
-
 
 ## Experimental Evaulation (Problem 2)
 To test the simulation, I assured that at the end of the program all guests had seen the vase by checking the guestSeenVaseArr[]. If any value in the array was equal to false, then some of the guests never entered the showroom and saw the vase before the party ended.
