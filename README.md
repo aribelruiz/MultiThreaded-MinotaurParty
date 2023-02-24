@@ -1,7 +1,3 @@
-# COP4520 Assignment2
-Concepts of Parallel and Distributed Processing - Assignment 2. 
-This assignment solves 2 different riddles using threads.
-
 # Problem 1: Minotaur's Birthday Party
 ## How to Run Program 1 (Problem 1)
 This program was written using java. To run problem 1, cd into the Assignment2/Problem1 directory and enter the following into the command line:
