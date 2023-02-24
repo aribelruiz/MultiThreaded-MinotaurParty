@@ -20,10 +20,7 @@ The guests must successfully announce when everyone has entered the labyrinth to
 The Minotaur allows the guests to come up with a strategy before the start of the game. Therefore, the guests must come up with a winning strategy that will allow them to successfully decide when every guest has entered the maze without communicating with each other once the game starts.
 
 ## Summary of Approach (Problem 1)
-My approach to problem 1 is conceptually similar to the solution of the Prisoner Switch problem we saw in class.
-
-### Conceptual Approach 
-The winning strategy that I simulated in my solution involves the following: 
+My approach to problem 1 is conceptually similar to the solution of the Prisoner Switch problem we saw in class. The winning strategy that I simulated in my solution involves the following: 
 - The first guest to enter the labyrinth is in charge of replacing the cupcake everytime they enter the maze and there is no cupcake on the table. 
 
 - Each other guest to enter the labyrinth is to eat the cupcake the first time they see it on the table. Otherwise, they leave the cupcake and table alone.
@@ -64,9 +61,9 @@ The program for problem 2 simulates a strategy 2 for the 'Minotaur's Crystal vas
 The Minotaur decides to show his guests a crystal vase in a dedicated showroom with a single door. Only one guest is allowed at a time. Strategy #2 allows guests to place a sign on the door indicating when the showroom is "AVAILABLE" or "BUSY". Every guest is responsible to set the sign to “BUSY” when entering the showroom and back to “AVAILABLE” when they exit. Therefore, guests will not try entering the room if the sign read "BUSY".
 
 ## Summary of Approach (Problem 2)
-### Coding Approach
-To simulate strategy 2 I used concurrent threads and a lock. I simulated this strategy until every guest at the party has entered the showroom and seen the vase. Each thread represents a guest who attempts to enter the showroom.
+To simulate strategy 2 I used concurrent threads and a lock. I simulated this strategy until every guest at the party has entered the showroom and seen the vase. Each thread represents a guest who attempts to enter the showroom when the showroom sign is "AVAILABLE".
 
+### Coding Approach
 To keep track of which guests have seen the vase, I created a boolean array called guestsSeenVaseArr[], where guestsSeenVaseArr[k] = true when guest ***k*** has entered the showroom and seen the vase. I then randomly generated a number ***nextGuestInRoom*** (0 to N-1) to represent a guest wanting to see the vase. If ***nextGuestInRoom*** does not equal the current guest viewing the vase and the showroom is available, I create a new thread where threadNumber equals ***nextGuestInRoom***. 
 
 When a thread begins to run, the thread tries to acquire the lock to ensure only one thread is accessing the showroom sign at a time. If the lock is acquired, the guest sets the showroom sign to "BUSY" and updates the guestsSeenVaseArr[k] to true so that guest who entered the showroom, guest ***k***, has seen the vase. Once the guest has seen the vase, they set the showroom sign to "AVAILABLE" and unlock the lock so other guests may enter the showroom and have access to changing the showroom sign. If the lock is not acquired, this means another guest gained access to the showroom and showroom sign, therefore the room is busy and the guest who failed to acquire the lock must try again at a later time in the party.
