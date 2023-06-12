@@ -1,5 +1,5 @@
-# COP4520_Assignment2 (Two Parts)
-Below you can find the ReadMe for Problem 1 and Problem 2 of Assignment 2 for Concepts of Parallel and Distributed Processing. 
+# Multi-threaded Practice (Minotaur Problems)
+Below you can find the ReadMe for two separate multi-threaded problems. 
 
 
 
